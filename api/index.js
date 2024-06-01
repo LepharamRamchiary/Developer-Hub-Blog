@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import dotenv from 'dotenv';
 import userRouter from "./routes/user.route.js";
 import authRouter from "./routes/auth.route.js";
-const PORT = 3011;
+const PORT = 8000;
 dotenv.config();
 
 // Middleware

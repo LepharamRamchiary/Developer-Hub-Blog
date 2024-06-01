@@ -38,7 +38,7 @@ export default function Header() {
         </Button>
         <Link to="/sing-in">
           <Button gradientDuoTone="purpleToBlue" outline>
-            Sing In
+            Sign In
           </Button>
         </Link>
         <Navbar.Toggle />

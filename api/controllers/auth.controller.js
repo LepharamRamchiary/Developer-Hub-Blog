@@ -2,7 +2,7 @@ import User from "../models/user.model.js";
 import bcryptjs from "bcryptjs";
 import { errorHandler } from "../utils/error.js";
 
-export const singup = async (req, res, next) => {
+export const signup = async (req, res, next) => {
     const { username, email, password } = req.body;
 
     if (!username || !email || !password || username === "" || email === "" || password === "") {
@@ -19,7 +19,7 @@ export const singup = async (req, res, next) => {
 
     try {
         await newUser.save();
-        res.status(200).json("Singup successfully");
+        res.status(200).json("Signup successfully");
     } catch (error) {
         next(error);
     }
