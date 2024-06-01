@@ -17,11 +17,3 @@ app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`)
 })
  
-
-app.get("/test", (req, res) => {
-    res.send("Hello From Databases");
-})
-
-app.get("/about",( req, res) => {
-    res.send("Hello From my own")
-})
