@@ -35,6 +35,7 @@ export default function DashProfile() {
   }, [iamgeFile]);
 
   const uploadImage = async () => {
+    setImageFileUploadError(null);
     const storage = getStorage(app);
     const fileName = new Date().getTime() + iamgeFile.name;
     const storageRef = ref(storage, fileName);
@@ -50,6 +51,9 @@ export default function DashProfile() {
         setImageFileUploadError(
           "Could not upload image (File must be less than 2MB)"
         );
+        setImageFileUploadProgress(null);
+        setImageFile(null);
+        setImageFileUrl(null);
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
@@ -58,8 +62,6 @@ export default function DashProfile() {
       }
     );
   };
-
-  console.log(imageFileUploadProgress, imageFileUploadError);
 
   return (
     <div className="max-w-lg mx-auto p-3 w-full">
