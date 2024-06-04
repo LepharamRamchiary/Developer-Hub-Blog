@@ -3,6 +3,8 @@ import mongoose from "mongoose";
 import dotenv from 'dotenv';
 import userRouter from "./routes/user.route.js";
 import authRouter from "./routes/auth.route.js";
+import cookieParser from "cookie-parser";
+
 const PORT = 8000;
 dotenv.config();
 
@@ -11,6 +13,8 @@ const app = express();
 
 // sending json data to db
 app.use(express.json());
+
+app.use(cookieParser());
 
 mongoose.connect(process.env.MONGODB_URI).then(() => {
     console.log("DB connected");
