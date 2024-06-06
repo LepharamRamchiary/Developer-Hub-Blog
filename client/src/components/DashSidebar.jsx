@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Sidebar } from "flowbite-react";
 import {
   HiArrowRight,
-  HiDocument,
   HiDocumentText,
+  HiOutlineUserGroup,
   HiUser,
 } from "react-icons/hi";
 import { Link, useLocation } from "react-router-dom";
@@ -16,7 +16,7 @@ export default function DashSidebar() {
   const dispatch = useDispatch();
   const [tab, setTab] = useState("");
 
-  const {currentUser} = useSelector(state => state.user);
+  const { currentUser } = useSelector((state) => state.user);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
@@ -57,7 +57,7 @@ export default function DashSidebar() {
               Profile
             </Sidebar.Item>
           </Link>
-          
+
           {currentUser.isAdmin && (
             <Link to="/dashboard?tab=posts">
               <Sidebar.Item
@@ -66,6 +66,18 @@ export default function DashSidebar() {
                 icon={HiDocumentText}
               >
                 Posts
+              </Sidebar.Item>
+            </Link>
+          )}
+
+          {currentUser.isAdmin && (
+            <Link to="/dashboard?tab=users">
+              <Sidebar.Item
+                active={tab === "users"}
+                as="div"
+                icon={HiOutlineUserGroup}
+              >
+                Users
               </Sidebar.Item>
             </Link>
           )}
