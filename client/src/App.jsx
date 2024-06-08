@@ -19,7 +19,7 @@ export default function App() {
   return (
     <div>
       <BrowserRouter>
-      <ScrollToTop />
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
