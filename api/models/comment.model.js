@@ -24,7 +24,7 @@ const commentSchema = new mongoose.Schema({
 
 },
     {
-        timeseries: true
+        timestamps: true
     }
 );
 
