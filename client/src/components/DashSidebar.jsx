@@ -7,6 +7,7 @@ import {
   HiOutlineUserGroup,
   HiUser,
 } from "react-icons/hi";
+import { MdDashboard } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
 import { signoutSuccess } from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
@@ -47,6 +48,17 @@ export default function DashSidebar() {
     <Sidebar className="w-full md:w-56">
       <Sidebar.Items>
         <Sidebar.ItemGroup className="flex flex-col gap-1">
+        {currentUser.isAdmin && (
+            <Link to="/dashboard?tab=dashbordcomponent">
+              <Sidebar.Item
+                active={tab === "dashbordcomponent"}
+                as="div"
+                icon={MdDashboard}
+              >
+                Dashbord
+              </Sidebar.Item>
+            </Link>
+          )}
           <Link to="/dashboard?tab=profile">
             <Sidebar.Item
               active={tab === "profile"}
