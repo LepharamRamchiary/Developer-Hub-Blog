@@ -34,7 +34,7 @@ export default function Dashboard() {
       {/* comments */}
       {tab === "comments" && <DashComments />}
       {/* dashbord comp */}
-      {tab === "dashbordcomponent" && <DashbordComp />}
+      {tab === "dashboardcomponent" && <DashbordComp />}
     </div>
   );
 }

@@ -49,13 +49,13 @@ export default function DashSidebar() {
       <Sidebar.Items>
         <Sidebar.ItemGroup className="flex flex-col gap-1">
         {currentUser.isAdmin && (
-            <Link to="/dashboard?tab=dashbordcomponent">
+            <Link to="/dashboard?tab=dashboardcomponent">
               <Sidebar.Item
-                active={tab === "dashbordcomponent"}
+                active={tab === "dashboardcomponent" || !tab}
                 as="div"
                 icon={MdDashboard}
               >
-                Dashbord
+                Dashboard
               </Sidebar.Item>
             </Link>
           )}
