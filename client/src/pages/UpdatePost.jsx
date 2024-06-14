@@ -23,7 +23,7 @@ export default function UpdatePost() {
   const [publishError, setPublishError] = useState(null);
   const { postId } = useParams();
 
-  const { currentUser} =useSelector((state) => state.user);
+  const { currentUser } = useSelector((state) => state.user);
 
   useEffect(() => {
     try {
@@ -86,13 +86,16 @@ export default function UpdatePost() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`/api/post/updatepost/${formData._id}/${currentUser._id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        `/api/post/updatepost/${formData._id}/${currentUser._id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       const data = await res.json();
       if (!res.ok) {
         setPublishError(data.message);
@@ -130,11 +133,33 @@ export default function UpdatePost() {
             value={formData.category}
           >
             <option value="uncategorized"> Select a category</option>
-            <option value="javascript">JavaScript</option>
-            <option value="java">Java</option>
             <option value="reactjs">React.js</option>
-            <option value="nodejs">Node.js</option>
+            <option value="reactnative">React Native</option>
+            <option value="flask">Flask</option>
+            <option value="angular">Angular</option>
+            <option value="ionic">Ionic</option>
+            <option value="laravel">Laravel</option>
+            <option value="ejs">Ejs</option>
+            <option value="vuejs">Vue.js</option>
+            <option value="expressjs">Express.js</option>
+            <option value="flutter">Flutter</option>
+            <option value="javascript">JavaScript</option>
             <option value="nextjs">Next.js</option>
+            <option value="java">Java</option>
+            <option value="springframework">Spring Framework</option>
+            <option value="nodejs">Node.js</option>
+            <option value="cpp">C++</option>
+            <option value="c">C</option>
+            <option value="python">Python</option>
+            <option value="django">Django</option>
+            <option value="go">Go</option>
+            <option value="php">PHP</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="swift">Swift</option>
+            <option value="ruby">Ruby</option>
+            <option value="kotlin">Kotlin</option>
+            <option value="jquery">jQuery</option>
           </Select>
         </div>
         <div className="flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3">
