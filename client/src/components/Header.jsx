@@ -16,8 +16,6 @@ export default function Header() {
 
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
-  
-
 
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
@@ -43,13 +41,13 @@ export default function Header() {
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const urlParams = new URLSearchParams(location.search);
-    urlParams.set("searchTerm",searchTerm);
+    urlParams.set("searchTerm", searchTerm);
     const searchQuery = urlParams.toString();
-    navigate(`/search?${searchQuery}`)
-  }
+    navigate(`/search?${searchQuery}`);
+  };
   return (
     <Navbar className="border-b-2">
       <Link
