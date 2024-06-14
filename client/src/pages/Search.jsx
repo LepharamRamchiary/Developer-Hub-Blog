@@ -135,10 +135,33 @@ export default function Search() {
               id="category"
             >
               <option value="uncategorized">Uncategorized</option>
-              <option value="reactjs">Reactjs</option>
+              <option value="reactjs">React.js</option>
+              <option value="reactnative">React Native</option>
+              <option value="flask">Flask</option>
+              <option value="angular">Angular</option>
+              <option value="ionic">Ionic</option>
+              <option value="laravel">Laravel</option>
+              <option value="ejs">Ejs</option>
+              <option value="vuejs">Vue.js</option>
+              <option value="expressjs">Express.js</option>
+              <option value="flutter">Flutter</option>
               <option value="javascript">JavaScript</option>
-              <option value="nextjs">Nextjs</option>
+              <option value="nextjs">Next.js</option>
               <option value="java">Java</option>
+              <option value="springframework">Spring Framework</option>
+              <option value="nodejs">Node.js</option>
+              <option value="cpp">C++</option>
+              <option value="c">C</option>
+              <option value="python">Python</option>
+              <option value="django">Django</option>
+              <option value="go">Go</option>
+              <option value="php">PHP</option>
+              <option value="html">HTML</option>
+              <option value="css">CSS</option>
+              <option value="swift">Swift</option>
+              <option value="ruby">Ruby</option>
+              <option value="kotlin">Kotlin</option>
+              <option value="jquery">jQuery</option>
             </Select>
           </div>
           <Button type="submit" outline gradientDuoTone="purpleToPink">
